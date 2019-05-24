@@ -1,0 +1,34 @@
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
+    <h1 class="h2"> <span class="fas fa-users"></span> Moradores</h1>
+    <div class="btn-toolbar mb-2 mb-md-0">
+        <a ui-sref="moradorNovo" class="btn btn-sm btn-outline-info">
+            <span class="fas fa-plus-square"></span>
+            Novo morador
+        </a>
+    </div>
+</div>
+<div class="table-responsive">
+    <table class="table table-striped table-sm">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Apartamento</th>
+                <th>Telefone</th>
+                <th>E-mail</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="morador in vm.moradores">
+                <td>{{morador.nome}}</td>
+                <td>{{morador.apartamento}}</td>
+                <td>{{morador.telefone}}</td>
+                <td>{{morador.email}}</td>
+                <td class="text-right">
+                    <a ui-sref="moradorEditar({id:morador._id})"><span class="fas fa-edit"></span></a>
+                    <a href="#" ng-click="vm.excluir(morador._id)"><span class="fas fa-trash-alt"></span></a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
